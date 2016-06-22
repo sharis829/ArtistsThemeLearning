@@ -1,0 +1,25 @@
+---
+---
+
+@import '1-tools/-tools-dir'
+
+//color variables
+$accent: {{ site.data.layout.accent}}
+$accentLight: adjust-hue(saturate(lighten($accent, 10%), 12%),10%)
+$documentBackgroundColor: {{ site.data.layout.documentBackgroundColor}}
+$textColor: {{ site.data.layout.textColor }}
+$selectionColor: lighten($accent, 20%)
+
+//img variables
+$logoUrl: '{{ site.data.layout.logo }}'
+$headerBgUrl: '{{ site.data.layout.headerbg }}'
+
+//animation variables
+$clientAnimation: '{{ site.data.layout.clientAnimation }}'
+
+
+@import '2-base/-base-dir'
+
+@import '3-sections/-sections-dir'
+
+

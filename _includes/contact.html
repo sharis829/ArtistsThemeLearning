@@ -1,0 +1,8 @@
+<section id='contact' class='section-contact'>
+	<h3>Contact</h3>
+	<div class='wrapper'>
+		{% for link in site.data.settings.social-links %}
+		<a class='icon icon-{{ link.name }}' href='{{ link.href }}'></a>
+		{% endfor %}
+	</div>
+</section>

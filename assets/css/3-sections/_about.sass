@@ -1,0 +1,108 @@
+.block-avatar
+  +display(flex)
+  +justify-content(space-between)
+  +align-items(center)
+  max-width: 780px
+  margin: 0 auto
+  
+  .avatar
+    background:
+      image: url(../img/travitar.jpg)
+      position: 50% 50%
+      repeat: no-repeat
+    +size(200px)
+    border-radius: 50%
+    order: 3     
+        
+  .icon
+    +size(100px)
+    background-color: #e5eaee
+    border-radius: 50%
+    +transition(0.5s all ease-out)
+    
+    path
+      fill: $accent
+    &:hover
+      +transform(rotate(-360deg))
+      
+  .icon-pen
+    order: 1
+   
+  .icon-mouse
+    order: 2 
+    
+  .icon-browser
+    order: 4 
+    
+  .icon-video
+    order: 5
+
+.block-blurb
+  text-align: center
+  max-width: 640px
+  margin: 50px auto
+  p
+    font-size: 24px
+    margin: 0 20px
+    
+.block-skillset
+  max-width: 540px
+  margin: 0 auto
+  padding: 0 20px
+  +clearfix
+  
+  .skill  
+    float: left
+    width: 50%
+    margin-bottom: 10px
+    
+    .skill-icons
+      span
+        +size(12px)
+        background-color: $accent
+        display: inline-block
+        border-radius: 50%
+        
+        &:after
+          background-color: #fff
+          +size(8px)
+          border-radius: 50%
+          display: block
+          content: ''
+          margin: 2px
+          
+  
+  @for $i from 1 to 10 
+    .skill-#{$i} span:nth-child(n+#{$i+1})
+      background-color: #ddd
+
+
+
+.icon-car
+  +size(250px) 
+  margin: 0 auto
+  path
+    fill: $accent
+    
+       
+@media (max-width: 640px)
+  .block-avatar
+    display: block
+    text-align: center
+  
+    div
+      display: inline-block
+    
+    .avatar
+      display: block
+      margin: 0 auto 30px
+    
+    .icon
+      margin: 10px 10%
+      
+@media (max-width: 540px) 
+  .block-skillset .skill
+    float: none
+    width: 100% 
+    max-width: 220px
+    margin: 0 auto 10px 

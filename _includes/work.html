@@ -1,0 +1,23 @@
+<section id='work' class='section-work'>
+	<h3>Work</h3>
+	<div class='work-wrapper'>
+		<div class='slide-wrapper'>
+			<div class='thumb-container'>
+			{% for project in site.data.settings.projects %}
+				<div class='thumb-unit' data-id='{{ project.id }}'>
+					<img src='assets/img/work/{{ project.id }}/thumb.jpg'>
+					<div class='mask'><strong>{{ project.name }}</strong></div>
+				</div>
+			{% endfor %}
+			</div>
+			<div class='work-detail'>
+				<div class='wrapper'>
+					<div class='icon icon-back'>{% include icons/icon-back.html %}</div>
+					<h4 class='proj-title'></h4>
+					<div class='proj-wrapper'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</section>

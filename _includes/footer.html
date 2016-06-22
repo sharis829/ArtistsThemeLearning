@@ -1,0 +1,8 @@
+<footer>
+	<nav>
+		{% for menu in site.data.settings.nav-menus %}
+		<a href='{{menu.url}}'>{{menu.text}}</a>
+		{% endfor %}
+	</nav>
+	<p class='copyright'>all content copyright 2014</p>
+</footer>

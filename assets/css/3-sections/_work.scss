@@ -1,0 +1,115 @@
+.section-work {
+    .work-wrapper {
+        max-width: 960px;
+        margin: 0 auto;
+        font-size: 0;
+        overflow: hidden;
+    }
+    .slide-wrapper {
+        width: 200%;
+        transition: 0.6s all ease-in-out;
+        &.slided {
+            transform: translate3d(-50%,0,0);
+        }
+    }
+    .thumb-container,
+    .work-detail {
+        width: 50%;
+        float: left;
+    }
+    .work-detail {
+        font-size: 20px;
+        display: none;
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+            @media (max-width: 780px) {
+                & {
+                    width: 100%;
+                }
+            }
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 20px 0 -65px;
+            path {
+                fill: rgba(0, 0, 0, 0.2);
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            @media (max-width: 640px) {
+                & {
+                    position: absolute;
+                    margin-left: 0px;
+                }
+            }
+        }
+        h4 {
+            display: inline-block;
+            vertical-align: middle;
+            
+            @media (max-width: 640px) {
+                & {
+                    margin-left: 50px;
+                }
+            }
+            
+        }
+        .proj-wrapper {
+            margin-top: 20px;
+            img {
+                margin-bottom: 20px;
+                @media (max-width: 640px) {
+                    & {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .thumb-unit {
+        width: 25%;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+            max-width: 100%;
+        }
+        .mask {
+            position: absolute;
+            @include align-items(center);
+            @include justify-content(space-around);
+            @include display(flex);
+            background-color: rgba($accent,0.9);
+            text-align: center;
+            @extend %animationstart_bounceOut;
+        }
+        &:hover {
+            z-index: 2;
+            .mask {
+                @extend %bounceOut;
+            }
+        }
+        strong {
+            color: #fff;
+            font: {
+                size: 24px;
+                weight: 300;
+            }
+            line-height: 1.2;
+            text-transform: uppercase;
+            padding: 0 10%;
+        }
+        @media (max-width: 780px) {
+            & {
+                width: 50%;
+            }
+        }
+    }
+}

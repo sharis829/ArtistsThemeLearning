@@ -1,0 +1,66 @@
+//
+// Styles for header
+//
+header
+  background:
+    image: url(../img/#{$logoUrl}), url(../img/#{$headerBgUrl})
+    repeat: no-repeat, no-repeat
+    position: 20px 20px, 50% 50%
+    size: 50px 50px, cover
+    blend-mode: overlay, normal
+  padding-bottom: 50px
+  
+  
+  h1
+    clear: both
+    text-align: center
+    padding-top: 100px
+    font-size: 72px
+    
+    span
+      display: inline-block
+      color: white
+      text-transform: uppercase
+      padding: 0.1em 0.5em
+      border: 10px solid white
+      letter-spacing: 0.05em
+      
+  .description         
+    text-align: center
+    color: white
+    font-weight: bold
+    padding-top: 20px
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    
+  nav
+    float: right
+    
+nav
+  padding: 30px 30px 0 0
+  
+  a
+    margin-left: 20px
+    display: inline-block
+    text-transform: uppercase
+    font-weight: bold
+    color: rgba(0,0,0,0.6)
+    
+    &:hover
+      color: rgba(0,0,0,1)
+
+
+@media (max-width: 640px)
+  header
+    background:
+      position: 50% 20px, center
+      
+    h1
+      padding-top: 20px
+      
+    nav
+      padding-top: 90px
+      float: none
+      text-align: center
+   
+ 

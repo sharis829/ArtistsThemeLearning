@@ -1,0 +1,71 @@
+/*  Typography presets
+  ------------------------------------  */
+p
+  margin: 0 0 20px 0
+    
+em
+  font-style: italic
+  
+strong
+  font-weight: bold
+  
+ 
+/* Links
+ ------------------------------------ */
+a
+  color: $accent
+  text-decoration: none
+  outline: 0
+  &:hover,&:focus
+    color: lighten($accent, 20%)
+
+
+/* Selection Color (todo)
+ ------------------------------------ */
+::selection
+  background-color: $selectionColor
+
+
+/* Basic Styles
+ ------------------------------------ */
+
+*
+  box-sizing: border-box    
+
+
+body
+  font:
+    family: 'Open Sans', sans-serif
+    weight: 300
+    size: 14px
+  background-color: $documentBackgroundColor
+  color: $textColor
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  
+  
+h3
+  color: $accentLight
+  @extend %subtitle
+  text-align: center
+  padding: 10px 0 30px
+  
+h4
+  color: $accent
+  font-weight: 300
+  margin: 0
+  font-size: 28px
+  text-transform: uppercase
+  
+svg
+  height: 100%
+  width: 100%
+  
+section 
+  padding: 50px 0 80px
+  
+section:nth-child(odd)
+  background-color: #e5eaee
+  
+  h3
+    color: darken($accentLight, 10%)

@@ -1,0 +1,198 @@
+.section-clients {
+    background-color: #fff;
+    position: relative;
+    /*****************
+     *  arrow styles
+     */
+    .icon {
+        @include size(40px);
+        position: absolute;
+        cursor: pointer;
+        z-index: 10;
+        path {
+            fill: $accent;
+        }
+        @media (max-width: 600px) {
+            & {
+                display: none;
+            }
+        }
+    }
+    .icon-arrow-left {
+        left: 20px;
+        top: 50%;
+    }
+    .icon-arrow-right {
+        right: 20px;
+        top: 50%;
+    }
+    
+    /******************
+      *  common styles
+      *  设置内容在大尺寸下的最大宽度， 设置两个wrapper之间间距
+      */
+    .wrapper {
+        max-width: 750px;
+        margin: 30px auto 0;
+        overflow: hidden;
+    }
+    
+    /******************
+     *  client styles
+     */
+    .client-unit {
+        display: none;
+        position: relative;
+        @include clearfix;
+        
+        &.animated {
+            @include display(flex);
+            @include align-items(center);
+            @extend %#{$clientAnimation};
+            
+            @media (max-width: 850px) {
+                & {
+                    display: block;
+                }
+            }
+        }
+    }
+    /******************
+     *  client styles - client-info
+     */
+    .client-info {
+        height: auto;
+        text-align: center;
+        padding-right: 30px;
+        min-width: 150px;
+        
+        .client-avatar {
+            margin-top: 0;
+            margin-bottom: 10px;
+            img {
+                display: inline-block;
+                @include size(100px);
+                overflow: hidden;
+                border-radius: 50%;
+            }
+        }
+        
+        .client-name {
+            text-transform: uppercase;
+            font-weight: 400;
+            display: block;
+            letter-spacing: 1px;
+        }
+        
+        .client-title{
+            font-style: normal;
+            font-size: 0.8em;
+        }
+    }
+    /******************
+     *  client styles - client-quote
+     */
+    .client-quote {
+        font-size: 18px;
+        line-height: 2;
+        
+        .icon-quote-mark {
+            @include size(55px);
+            padding-top: 5px;
+            position: absolute;
+            margin-top: -16px;
+            margin-left: -20px;
+            z-index: -1;
+            path {
+                fill: rgba($accent, 0.3);
+            }
+        }
+        p {
+            margin-top: 10px;
+        }
+        @media (max-width: 850px) {
+            & {
+                max-width: 450px;
+                padding: 10px 30px;
+                margin: 0 auto;
+            }
+        }
+    }
+    
+    /******************
+     *  client-mobile-nav
+     */
+    .client-mobile-nav {
+        display: none;
+        text-align: center;
+        @media (max-width: 400px) {
+            & {
+                display: block;
+            }
+        }
+        span {
+            background: #ddd;
+            @include size(20px);
+            display: inline-block;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            margin: 0 8px;
+            &:after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                background: #fff;
+                @include size(16px);
+                border-radius: 50%;
+                @include position(absolute, 2px null null 2px);
+                z-index: 1;
+            }
+            &.active {
+                background: $accent;
+            }
+        }
+    }
+    
+    /******************
+     *  client-logos
+     */
+    .client-logos {
+        width: 100%;
+        @include display(flex);
+        @include align-items(flex-end);
+        @include justify-content(space-between);
+        @media (max-width: 400px) {
+            & {
+                display: none;
+            }
+        }
+        div {
+            @include flex(0);
+            padding-bottom: 20px;
+            cursor: pointer;
+            opacity: 0.5;
+            border-bottom: 4px solid transparent;
+            margin: 0 2%;
+            img {
+                width: 100%;
+            }
+            &.active {
+                opacity: 1;
+                border-bottom-color: $accent;
+            }
+            &.aaroni {
+                flex: 0 1 206px;
+            }
+            &.atariboy {
+                flex: 0 1 97px;
+            }
+            &.jackiesaik {
+                flex: 0 1 211px;
+            }
+            &.teleject {
+                flex: 0 1 77px;
+            }
+        }
+    }
+}

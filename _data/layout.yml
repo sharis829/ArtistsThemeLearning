@@ -1,0 +1,20 @@
+# Colors
+
+accent: "#c99065"
+documentBackgroundColor: "#fff"
+textColor: "#666"
+selectionColor: 'red'
+
+
+# Image Urls
+
+logo: "logo.svg"
+headerbg: "hero-bg.jpg"
+
+
+# Animation
+
+clientAnimation: "bounceOut"
+
+
+

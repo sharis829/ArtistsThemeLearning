@@ -1,0 +1,25 @@
+<section id='about'>
+	<h3>About Me</h3>
+	<div class='block-avatar'>
+		<div class='avatar'></div>
+		<div class='icon icon-pen'>{% include icons/icon-pencil.html %}</div>
+		<div class='icon icon-mouse'>{% include icons/icon-mouse.html %}</div>
+		<div class='icon icon-browser'>{% include icons/icon-browser.html %}</div>
+		<div class='icon icon-video'>{% include icons/icon-video.html %}</div>
+	</div>
+	<div class='block-blurb'><p><strong>Travis specializes in making things</strong> for human people. Most of the things he makes are <a href="http://travisneilson.com" target="_blank">digital interfaces</a>, but he also puts effort into crafting <a href="http://soundcloud.com/travis-neilson" target="_blank">next-level beats</a> and <a href="http://youtube.com/user/devtipsfordesigners" target="_blank">YouTube videos</a> about making codes happen.</p>
+</div>
+	<div class='block-skillset'>
+		{% for skill in site.data.settings.skills %}
+		<div class='skill'>
+			<div class='skill-label'>{{ skill.name }}</div>
+			<div class='skill-icons skill-{{ skill.level }}'>
+				{% for i in (1..10) %}
+				  <span></span>
+				{% endfor %}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	
+</section>
