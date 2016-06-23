@@ -138,13 +138,13 @@ function workSlide() {
 	$('.thumb-unit').on('click', function() {
 		var $this = $(this),
 			title = $this.find('strong').text(),
-			spinner = '<div class="loader">Loading...</div>',
+			spinner = '<div class="coffee_cup spinner">Loading...</div>',
 			filenameStr = 'work/' + $this.data('id') + '.html';
 
 		//add the animation
 		$('.slide-wrapper').addClass('slided');
 		$('.work-detail').fadeIn();
-
+		
 		//load the project's correct title
 		$('.proj-title').text(title);
 
@@ -159,23 +159,35 @@ function workSlide() {
 
 }
 
-(function($) {
-	$.fn.fitText = function(k, options) {
-		var compressor = k | 1;
+(function( $ ){
 
-		this.each(function() {
-			var $this = $(this);
+  $.fn.fitText = function( kompressor, options ) {
 
-			var resizer = function() {
-				var fontSize = Math.max(Math.min($this.width() / (compressor * 10), parseFloat(options.maxFontSize)), parseFloat(options.minFontSize));
-				$this.css('fontSize', fontSize + 'px');
-			}
+    // Setup options
+    var compressor = kompressor || 1,
+        settings = $.extend({
+          'minFontSize' : Number.NEGATIVE_INFINITY,
+          'maxFontSize' : Number.POSITIVE_INFINITY
+        }, options);
 
-			//页面load完 就resize一次
-			resizer();
+    return this.each(function(){
 
-			$(window).on('resize.fitText', resizer);
-		});
+      // Store the object
+      var $this = $(this);
 
-	}
-})(jQuery);
+      // Resizer() resizes items based on the object width divided by the compressor * 10
+      var resizer = function () {
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Call on resize. Opera debounces their resize by default.
+      $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+    });
+
+  };
+
+})( jQuery );
