@@ -149,7 +149,7 @@ function workSlide() {
 		$('.proj-title').text(title);
 
 		// load the project content
-		$('.proj-wrapper').html(spinner).load(filenameStr);
+		$('.proj-wrapper').html(spinner);
 	});
 
 	$('.icon-back').on('click', function() {
