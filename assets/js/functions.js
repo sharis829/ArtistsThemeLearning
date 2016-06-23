@@ -138,7 +138,7 @@ function workSlide() {
 	$('.thumb-unit').on('click', function() {
 		var $this = $(this),
 			title = $this.find('strong').text(),
-			spinner = '<div class="coffee_cup spinner">Loading...</div>',
+			spinner = '<div class="loader spinner">Loading...</div>',
 			filenameStr = 'work/' + $this.data('id') + '.html';
 
 		//add the animation
